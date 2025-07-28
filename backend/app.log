@@ -1,0 +1,1052 @@
+2025-03-28 20:50:30,699 - root - ERROR - Processing failed: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "C:\Python313\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1550, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 9, in handle_file_upload
+    images = convert_from_bytes(
+        file_content,
+        poppler_path=Config.POPPLER_PATH
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 359, in convert_from_bytes
+    return convert_from_path(
+        f.name,
+    ...<20 lines>...
+        hide_annotations=hide_annotations,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ~~~~~~~~~~~~~~~~~^
+        pdf_path, userpw, ownerpw, poppler_path=poppler_path
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["Pages"]
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+        "Unable to get page count. Is poppler installed and in PATH?"
+    )
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 41, in upload_file
+    processed_images = handle_file_upload(file_content, file.content_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 17, in handle_file_upload
+    raise ValueError(f"File processing failed: {str(e)}") from e
+ValueError: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+2025-03-28 20:55:09,628 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-28 20:55:09,629 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-28 20:55:09,630 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-28 20:55:09,630 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-28 20:55:09,630 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-28 20:55:09,630 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-28 20:55:09,631 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-28 20:55:09,631 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-28 20:55:09,631 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:65536]
+2025-03-28 20:55:09,632 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:114139]
+2025-03-28 20:55:09,632 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-28 20:55:09,632 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-28 20:55:09,637 - root - ERROR - Processing failed: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "C:\Python313\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1550, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 9, in handle_file_upload
+    images = convert_from_bytes(
+        file_content,
+        poppler_path=Config.POPPLER_PATH
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 359, in convert_from_bytes
+    return convert_from_path(
+        f.name,
+    ...<20 lines>...
+        hide_annotations=hide_annotations,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ~~~~~~~~~~~~~~~~~^
+        pdf_path, userpw, ownerpw, poppler_path=poppler_path
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["Pages"]
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+        "Unable to get page count. Is poppler installed and in PATH?"
+    )
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 41, in upload_file
+    processed_images = handle_file_upload(file_content, file.content_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 17, in handle_file_upload
+    raise ValueError(f"File processing failed: {str(e)}") from e
+ValueError: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+2025-03-28 21:08:21,363 - utils.logger - ERROR - Full error details: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "C:\Python313\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1550, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 9, in handle_file_upload
+    images = convert_from_bytes(
+        file_content,
+        poppler_path=Config.POPPLER_PATH
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 359, in convert_from_bytes
+    return convert_from_path(
+        f.name,
+    ...<20 lines>...
+        hide_annotations=hide_annotations,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ~~~~~~~~~~~~~~~~~^
+        pdf_path, userpw, ownerpw, poppler_path=poppler_path
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["Pages"]
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+        "Unable to get page count. Is poppler installed and in PATH?"
+    )
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 42, in upload_file
+    processed_images = handle_file_upload(file_content, file.content_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 17, in handle_file_upload
+    raise ValueError(f"File processing failed: {str(e)}") from e
+ValueError: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+2025-03-28 22:39:49,411 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-28 22:39:49,412 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-28 22:39:49,413 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-28 22:39:49,413 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-28 22:39:49,413 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-28 22:39:49,413 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-28 22:39:49,414 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-28 22:39:49,414 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-28 22:39:49,415 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:32768]
+2025-03-28 22:39:49,416 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:146907]
+2025-03-28 22:39:49,416 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-28 22:39:49,416 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-28 22:39:49,418 - utils.logger - DEBUG - Started processing complex_invoice_a4.pdf
+2025-03-28 22:39:49,425 - utils.logger - ERROR - Full error details: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "C:\Python313\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1550, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 9, in handle_file_upload
+    images = convert_from_bytes(
+        file_content,
+        poppler_path=Config.POPPLER_PATH
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 359, in convert_from_bytes
+    return convert_from_path(
+        f.name,
+    ...<20 lines>...
+        hide_annotations=hide_annotations,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ~~~~~~~~~~~~~~~~~^
+        pdf_path, userpw, ownerpw, poppler_path=poppler_path
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["Pages"]
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+        "Unable to get page count. Is poppler installed and in PATH?"
+    )
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 43, in upload_file
+    processed_images = handle_file_upload(file_content, file.content_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\file_handler.py", line 17, in handle_file_upload
+    raise ValueError(f"File processing failed: {str(e)}") from e
+ValueError: File processing failed: Unable to get page count. Is poppler installed and in PATH?
+2025-03-29 01:26:25,274 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-29 01:26:25,275 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-29 01:26:25,275 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-29 01:26:25,275 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:26:25,275 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-29 01:26:25,276 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-29 01:26:25,276 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:26:25,276 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-29 01:26:25,277 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:49152]
+2025-03-29 01:26:25,277 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:130523]
+2025-03-29 01:26:25,277 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-29 01:26:25,278 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-29 01:26:25,279 - utils.logger - DEBUG - Started processing complex_invoice_a4.pdf
+2025-03-29 01:26:26,492 - utils.logger - ERROR - Full error details: Gemini processing failed: a bytes-like object is required, not 'PpmImageFile'
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 28, in process_invoice
+    image = Image.open(io.BytesIO(image_data))
+                       ~~~~~~~~~~^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'PpmImageFile'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 48, in upload_file
+    response_text = process_invoice(image, file.content_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 38, in process_invoice
+    raise RuntimeError(f"Gemini processing failed: {str(e)}") from e
+RuntimeError: Gemini processing failed: a bytes-like object is required, not 'PpmImageFile'
+2025-03-29 01:44:01,033 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-29 01:44:01,034 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-29 01:44:01,034 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-29 01:44:01,035 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:44:01,035 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-29 01:44:01,035 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-29 01:44:01,035 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:44:01,036 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-29 01:44:01,036 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:16384]
+2025-03-29 01:44:01,037 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:163291]
+2025-03-29 01:44:01,037 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-29 01:44:01,038 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-29 01:44:01,038 - utils.logger - DEBUG - Started processing complex_invoice_a4.pdf
+2025-03-29 01:44:03,638 - utils.logger - ERROR - Full error details: Gemini processing failed: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 35, in process_invoice
+    response = model.generate_content([
+        PROMPT_TEMPLATE,
+        {"mime_type": mime_type, "data": img_bytes}  # Proper format for Gemini
+    ])
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 41, in process_invoice
+    raise RuntimeError(f"Gemini processing failed: {str(e)}") from e
+RuntimeError: Gemini processing failed: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+2025-03-29 01:55:15,767 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-29 01:55:15,768 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-29 01:55:15,768 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-29 01:55:15,768 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:55:15,769 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-29 01:55:15,769 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-29 01:55:15,780 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 01:55:15,781 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-29 01:55:15,781 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:131072]
+2025-03-29 01:55:15,782 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:48603]
+2025-03-29 01:55:15,782 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-29 01:55:15,782 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-29 01:55:15,783 - utils.logger - DEBUG - Started processing complex_invoice_a4.pdf
+2025-03-29 01:55:20,671 - utils.logger - ERROR - Full error details: Gemini processing failed: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 35, in process_invoice
+    response = model.generate_content(
+        contents=[
+    ...<2 lines>...
+        ]
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+    ~~~~~~~~~~~~~~~~~~~^
+        exc,
+        ^^^^
+    ...<6 lines>...
+        timeout,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\nilesh\AppData\Roaming\Python\Python313\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nilesh\Desktop\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+  File "C:\Users\nilesh\Desktop\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    raise RuntimeError(f"Gemini processing failed: {str(e)}") from e
+RuntimeError: Gemini processing failed: 404 Gemini 1.0 Pro Vision has been deprecated on July 12, 2024. Consider switching to different model, for example gemini-1.5-flash.
+2025-03-29 02:00:32,873 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-29 02:00:32,874 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-29 02:00:32,874 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:120]
+2025-03-29 02:00:32,875 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 02:00:32,875 - python_multipart.multipart - DEBUG - Calling on_header_field with data[122:134]
+2025-03-29 02:00:32,875 - python_multipart.multipart - DEBUG - Calling on_header_value with data[136:151]
+2025-03-29 02:00:32,875 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 02:00:32,876 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-29 02:00:32,876 - python_multipart.multipart - DEBUG - Calling on_part_data with data[155:16384]
+2025-03-29 02:00:32,877 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:163291]
+2025-03-29 02:00:32,877 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-29 02:00:32,878 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-29 02:00:32,880 - utils.logger - DEBUG - Started processing complex_invoice_a4.pdf
+2025-03-29 02:00:38,989 - root - INFO - Processed page 1 successfully
+2025-03-29 02:00:39,009 - utils.logger - DEBUG - Processing completed successfully
+2025-03-29 02:02:40,945 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-03-29 02:02:40,946 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-03-29 02:02:40,946 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:122]
+2025-03-29 02:02:40,947 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 02:02:40,947 - python_multipart.multipart - DEBUG - Calling on_header_field with data[124:136]
+2025-03-29 02:02:40,948 - python_multipart.multipart - DEBUG - Calling on_header_value with data[138:153]
+2025-03-29 02:02:40,948 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-03-29 02:02:40,948 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-03-29 02:02:40,952 - python_multipart.multipart - DEBUG - Calling on_part_data with data[157:95442]
+2025-03-29 02:02:40,953 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-03-29 02:02:40,953 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-03-29 02:02:40,953 - utils.logger - DEBUG - Started processing OD330849481290769100.pdf
+2025-03-29 02:02:45,515 - root - INFO - Processed page 1 successfully
+2025-03-29 02:02:50,002 - root - INFO - Processed page 2 successfully
+2025-03-29 02:02:50,032 - utils.logger - DEBUG - Processing completed successfully
+2025-07-13 19:52:55,188 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 19:55:02,925 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 19:55:02,926 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 19:55:02,926 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:113]
+2025-07-13 19:55:02,927 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 19:55:02,927 - python_multipart.multipart - DEBUG - Calling on_header_field with data[115:127]
+2025-07-13 19:55:02,927 - python_multipart.multipart - DEBUG - Calling on_header_value with data[129:144]
+2025-07-13 19:55:02,927 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 19:55:02,928 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 19:55:02,928 - python_multipart.multipart - DEBUG - Calling on_part_data with data[148:16384]
+2025-07-13 19:55:02,929 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:16384]
+2025-07-13 19:55:02,929 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:16384]
+2025-07-13 19:55:02,930 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:16384]
+2025-07-13 19:55:02,930 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:1451]
+2025-07-13 19:55:02,931 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 19:55:02,931 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 19:55:02,931 - utils.logger - DEBUG - Started processing Invoice 100.pdf
+2025-07-13 19:55:05,296 - utils.logger - ERROR - Full error details: Gemini processing failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 35, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    raise RuntimeError(f"Gemini processing failed: {str(e)}") from e
+RuntimeError: Gemini processing failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]
+2025-07-13 19:59:53,155 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 19:59:53,155 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 19:59:53,157 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:116]
+2025-07-13 19:59:53,157 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 19:59:53,157 - python_multipart.multipart - DEBUG - Calling on_header_field with data[118:130]
+2025-07-13 19:59:53,157 - python_multipart.multipart - DEBUG - Calling on_header_value with data[132:147]
+2025-07-13 19:59:53,158 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 19:59:53,159 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 19:59:53,160 - python_multipart.multipart - DEBUG - Calling on_part_data with data[151:16384]
+2025-07-13 19:59:53,160 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:38158]
+2025-07-13 19:59:53,160 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 19:59:53,161 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 19:59:53,161 - utils.logger - DEBUG - Started processing QualityHosting.pdf
+2025-07-13 19:59:55,224 - utils.logger - ERROR - Full error details: Gemini processing failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 35, in process_invoice
+  File "D:\softwares\anaconda\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\softwares\anaconda\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    {"role": "user", "parts": [PROMPT_TEMPLATE]},
+RuntimeError: Gemini processing failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-07-13 20:10:15,521 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 20:12:34,037 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 20:19:01,205 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 20:21:12,375 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 20:23:03,610 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 20:23:03,610 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 20:23:03,610 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:118]
+2025-07-13 20:23:03,611 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:23:03,611 - python_multipart.multipart - DEBUG - Calling on_header_field with data[120:132]
+2025-07-13 20:23:03,611 - python_multipart.multipart - DEBUG - Calling on_header_value with data[134:149]
+2025-07-13 20:23:03,612 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:23:03,612 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 20:23:03,612 - python_multipart.multipart - DEBUG - Calling on_part_data with data[153:16384]
+2025-07-13 20:23:03,614 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:58237]
+2025-07-13 20:23:03,614 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 20:23:03,615 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 20:23:03,616 - utils.logger - DEBUG - Started processing NetpresseInvoice.pdf
+2025-07-13 20:23:24,597 - utils.logger - ERROR - Full error details: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 34
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 58, in process_invoice
+    raise RuntimeError("API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.") from e
+RuntimeError: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+2025-07-13 20:24:55,041 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 20:24:55,042 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 20:24:55,042 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:116]
+2025-07-13 20:24:55,042 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:24:55,042 - python_multipart.multipart - DEBUG - Calling on_header_field with data[118:130]
+2025-07-13 20:24:55,043 - python_multipart.multipart - DEBUG - Calling on_header_value with data[132:147]
+2025-07-13 20:24:55,043 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:24:55,043 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 20:24:55,043 - python_multipart.multipart - DEBUG - Calling on_part_data with data[151:16384]
+2025-07-13 20:24:55,044 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:38158]
+2025-07-13 20:24:55,044 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 20:24:55,044 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 20:24:55,044 - utils.logger - DEBUG - Started processing QualityHosting.pdf
+2025-07-13 20:25:14,135 - utils.logger - ERROR - Full error details: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 58, in process_invoice
+    raise RuntimeError("API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.") from e
+RuntimeError: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+2025-07-13 20:30:39,459 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 20:30:39,460 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 20:30:39,461 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:107]
+2025-07-13 20:30:39,461 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:30:39,462 - python_multipart.multipart - DEBUG - Calling on_header_field with data[109:121]
+2025-07-13 20:30:39,462 - python_multipart.multipart - DEBUG - Calling on_header_value with data[123:138]
+2025-07-13 20:30:39,463 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:30:39,463 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 20:30:39,464 - python_multipart.multipart - DEBUG - Calling on_part_data with data[142:16384]
+2025-07-13 20:30:39,464 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:33047]
+2025-07-13 20:30:39,465 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 20:30:39,465 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 20:30:39,466 - utils.logger - DEBUG - Started processing saeco.pdf
+2025-07-13 20:30:58,998 - utils.logger - ERROR - Full error details: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 50, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 58, in process_invoice
+    raise RuntimeError("API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.") from e
+RuntimeError: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+2025-07-13 20:38:35,127 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-07-13 20:39:30,269 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 20:39:30,269 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 20:39:30,271 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:137]
+2025-07-13 20:39:30,272 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:39:30,273 - python_multipart.multipart - DEBUG - Calling on_header_field with data[139:151]
+2025-07-13 20:39:30,273 - python_multipart.multipart - DEBUG - Calling on_header_value with data[153:168]
+2025-07-13 20:39:30,274 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:39:30,274 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 20:39:30,275 - python_multipart.multipart - DEBUG - Calling on_part_data with data[172:16384]
+2025-07-13 20:39:30,276 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:30,280 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,283 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,286 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,287 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:114688]
+2025-07-13 20:39:30,289 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:30,291 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:49152]
+2025-07-13 20:39:30,293 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:30,294 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:98304]
+2025-07-13 20:39:30,297 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:98304]
+2025-07-13 20:39:30,298 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:65536]
+2025-07-13 20:39:30,306 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:30,335 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,336 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,338 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,340 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,342 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:30,344 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:64371]
+2025-07-13 20:39:30,345 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 20:39:30,346 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 20:39:30,349 - utils.logger - DEBUG - Started processing ComparisonofLaserandVideoTechniques.pdf
+2025-07-13 20:39:50,928 - utils.logger - ERROR - Full error details: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 53, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 58, in process_invoice
+    raise RuntimeError("API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.") from e
+RuntimeError: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+2025-07-13 20:39:50,998 - python_multipart.multipart - DEBUG - Calling on_part_begin with no data
+2025-07-13 20:39:50,998 - python_multipart.multipart - DEBUG - Calling on_header_field with data[42:61]
+2025-07-13 20:39:50,999 - python_multipart.multipart - DEBUG - Calling on_header_value with data[63:138]
+2025-07-13 20:39:50,999 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:39:51,000 - python_multipart.multipart - DEBUG - Calling on_header_field with data[140:152]
+2025-07-13 20:39:51,000 - python_multipart.multipart - DEBUG - Calling on_header_value with data[154:169]
+2025-07-13 20:39:51,001 - python_multipart.multipart - DEBUG - Calling on_header_end with no data
+2025-07-13 20:39:51,001 - python_multipart.multipart - DEBUG - Calling on_headers_finished with no data
+2025-07-13 20:39:51,005 - python_multipart.multipart - DEBUG - Calling on_part_data with data[173:49152]
+2025-07-13 20:39:51,014 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:51,015 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,017 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,019 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,025 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,028 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,029 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:16384]
+2025-07-13 20:39:51,038 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,045 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:81920]
+2025-07-13 20:39:51,047 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,056 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,061 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,065 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,068 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,071 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,074 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,078 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,081 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,083 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,085 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,088 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,091 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,095 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,101 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,108 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,113 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,115 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,116 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,118 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,121 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,125 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,127 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,129 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,132 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,135 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,137 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,144 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,147 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,149 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,152 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,154 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,158 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,162 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,164 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,167 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,169 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,171 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,178 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,183 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,188 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,195 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,200 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,204 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:131072]
+2025-07-13 20:39:51,210 - python_multipart.multipart - DEBUG - Calling on_part_data with data[0:41425]
+2025-07-13 20:39:51,211 - python_multipart.multipart - DEBUG - Calling on_part_end with no data
+2025-07-13 20:39:51,213 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2025-07-13 20:39:51,217 - utils.logger - DEBUG - Started processing d4a1ef52-f2d7-4ad2-a3ec-e601decf351c.pdf
+2025-07-13 20:40:12,522 - utils.logger - ERROR - Full error details: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 43, in process_invoice
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+violations {
+}
+violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\omdatta1\omdatta\backend\app.py", line 53, in upload_file
+    response_text = process_invoice(image, image_mime_type)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\omdatta1\omdatta\backend\services\gemini_services.py", line 58, in process_invoice
+    raise RuntimeError("API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.") from e
+RuntimeError: API quota exceeded. Please wait a moment and try again, or check your Gemini API billing plan.
